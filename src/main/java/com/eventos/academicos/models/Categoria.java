@@ -1,7 +1,6 @@
 package com.eventos.academicos.models;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.CollectionId;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +8,6 @@ import java.util.List;
 @Entity
 @Table(name = "tb_categoria")
 public class Categoria {
-    /// ONE TO MANY (1 - *)
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

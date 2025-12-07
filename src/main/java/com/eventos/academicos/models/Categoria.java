@@ -1,6 +1,7 @@
 package com.eventos.academicos.models;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CollectionId;
 
 @Entity
 @Table(name = "tb_categoria")
@@ -10,17 +11,15 @@ public class Categoria {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String nome;
-
-    private String email;
+    @Column(columnDefinition = "TEXT")
+    private String descricao;
 
     public Categoria() {
     }
 
-    public Categoria(Integer id, String nome, String email) {
+    public Categoria(Integer id, String descricao) {
         this.id = id;
-        this.nome = nome;
-        this.email = email;
+        this.descricao = descricao;
     }
 
     public Integer getId() {
@@ -31,19 +30,11 @@ public class Categoria {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 }
